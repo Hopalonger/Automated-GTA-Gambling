@@ -88,23 +88,19 @@ def CalulateMove(PlayerHand, DealerHand):  # 1 = Hit 0 = Stand 2 = Double
     Dealerhand = int(float(DealerHand))
     if Playerhand >= 17:
             return(0)
-    elif Playerhand <= 8:
-        return(1)
-    elif Playerhand == 9 and Dealerhand != 3 and Dealerhand != 4 and Dealerhand != 5 and Dealerhand != 6:
-        return(1)
-    elif Playerhand == 9 and Dealerhand < 7 and Dealerhand != 2:
+    elif Playerhand <= 8 and Dealerhand == 5 and DealerHand == 6:
+        return(2)
+    elif Playerhand == 9 and Dealerhand < 7:
         return(2)
     elif Playerhand == 10 and Dealerhand < 10:
         return(2)
-    elif Playerhand == 11 and Dealerhand != 11:
+    elif Playerhand == 11:
         return(2)
-    elif Playerhand == 10 and Dealerhand > 9:
+    elif Playerhand < 12:
         return(1)
-    elif Playerhand == 11 and Dealerhand == 11:
-        return(1)
-    elif Playerhand == 12 and Dealerhand != 4 and Dealerhand != 5 and Dealerhand != 6:
-        return(1)
-    elif 12 < Playerhand < 17 and 6 < Dealerhand:
+    elif Playerhand == 12 and 4 =< Dealerhand  =< 6:
+        return(0)
+    elif 12 =< Playerhand < 17 and 6 < Dealerhand:
         return(1)
     else:
         return(0)
